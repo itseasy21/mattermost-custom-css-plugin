@@ -1,10 +1,10 @@
 {
-    "id": "com.mattermost.plugin-starter-template",
-    "name": "Plugin Starter Template",
-    "description": "This plugin serves as a starting point for writing a Mattermost plugin.",
-    "homepage_url": "https://github.com/mattermost/mattermost-plugin-starter-template",
-    "support_url": "https://github.com/mattermost/mattermost-plugin-starter-template/issues",
-    "icon_path": "assets/starter-template-icon.svg",
+    "id": "com.mattermost.custom-css-plugin",
+    "name": "Custom CSS Plugin",
+    "description": "A plugin to customize the default font and hide specific elements in Mattermost.",
+    "homepage_url": "https://github.com//tokom-software/custom-css-plugin",
+    "support_url": "https://github.com//tokom-software/custom-css-plugin/issues",
+    "icon_path": "assets/custom-css-plugin-icon.svg",
     "min_server_version": "6.2.1",
     "server": {
         "executables": {
@@ -19,8 +19,8 @@
         "bundle_path": "webapp/dist/main.js"
     },
     "settings_schema": {
-        "header": "",
-        "footer": "",
+        "header": "Custom CSS Plugin Settings",
+        "footer": "Apply your custom styles to Mattermost.",
         "settings": []
     }
 }

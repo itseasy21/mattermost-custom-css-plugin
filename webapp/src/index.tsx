@@ -1,22 +1,24 @@
+// index.tsx
 import {Store, Action} from 'redux';
-
 import {GlobalState} from '@mattermost/types/lib/store';
-
-import manifest from '@/manifest';
 
 import {PluginRegistry} from '@/types/mattermost-webapp';
 
+// Import the custom CSS function
+import CustomCSS from './custom_css';
+
 export default class Plugin {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
     public async initialize(registry: PluginRegistry, store: Store<GlobalState, Action<Record<string, unknown>>>) {
-        // @see https://developers.mattermost.com/extend/plugins/webapp/reference/
+        // Apply custom CSS by registering the component
+        registry.registerRootComponent(CustomCSS);
     }
 }
 
 declare global {
     interface Window {
-        registerPlugin(pluginId: string, plugin: Plugin): void
+        registerPlugin(pluginId: string, plugin: Plugin): void;
     }
 }
 
-window.registerPlugin(manifest.id, new Plugin());
+// Register the plugin
+window.registerPlugin('com.mattermost.custom-css-plugin', new Plugin());
